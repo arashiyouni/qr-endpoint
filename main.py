@@ -21,7 +21,7 @@ def get_db():
 # Endpoint 1: Generar código QR
 @app.get("/qr/{endpoint}")
 def generar_qr(endpoint: str):
-    url = f"http://localhost:8000/{endpoint}"
+    url = f"https://75b9-200-31-174-214.ngrok-free.app/{endpoint}"
     img = qrcode.make(url)
     img.save("qr_code.png")
     return FileResponse("qr_code.png", media_type="image/png")
